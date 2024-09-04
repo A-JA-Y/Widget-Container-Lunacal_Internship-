@@ -1,4 +1,11 @@
 import React from "react";
+import help from "../assets/help.png";
+import holder from "../assets/holder.png";
+import prev from "../assets/prev.png";
+import next from "../assets/next.png";
+import gallery from "../assets/gallery.png";
+import { PlusOutlined } from "@ant-design/icons";
+
 
 const WidgetContainer = () => {
   return (
@@ -10,8 +17,12 @@ const WidgetContainer = () => {
         <div className="right flex flex-col gap-3  items-center justify-center  h-full ">
           <div className="firstwidget w-full text-center bg-[#363c43] flex rounded-xl p-2 justify-between">
             <div className="left flex flex-col h-full items-center justify-center">
-              <div className="help cursor-pointer">?</div>
-              <div className="drag pt-5 cursor-grabbing">::</div>
+              <div className="help cursor-pointer">
+                <img src={help} className=" w-24 " alt="" />
+              </div>
+              <div className="drag pt-5 cursor-grabbing">
+                <img src={holder} alt="" />
+              </div>
             </div>
             <div className="middle flex flex-col items-center justify-center">
               <nav>
@@ -38,18 +49,40 @@ const WidgetContainer = () => {
           <hr className="h-1 bg-[#363c43] w-[90%] rounded-full border-none" />
           <div className="secondwidget w-full text-center bg-[#363c43] flex rounded-xl p-2 justify-between">
             <div className="left flex flex-col h-full items-center justify-center ">
-              <div className="help cursor-pointer">?</div>
-              <div className="drag pt-5 cursor-grabbing">::</div>
+              <div className="help cursor-pointer">
+                <img src={help} className="w-7 " alt="" />
+              </div>
+              <div className="drag pt-5 cursor-grabbing">
+                <img src={holder} alt="" />
+              </div>
             </div>
             <div className="middle flex flex-col items-center justify-between">
               <nav>
                 <ul className="flex gap-3">
-                  <li>Gallery</li>
-                  <li>Add Image</li>
+                  <li>
+                    <img src={gallery} alt="" />
+                  </li>
+                  <li>
+                    <button className=" w-36 h-14 text-white font-medium drop-shadow-xl border-t-2 backdrop-blur-md rounded-full bg-[#40464d]">
+                     <span><PlusOutlined  /></span> ADD IMAGE
+                    </button>
+                  </li>
                   <li>
                     <div className="prev-next-btns">
-                      <button>Prev</button>
-                      <button>Next</button>
+                      <button>
+                        <img
+                          src={prev}
+                          className="hover:brightness-75 transition-all  "
+                          alt=""
+                        />
+                      </button>
+                      <button>
+                        <img
+                          src={next}
+                          className="hover:brightness-75 transition-all  "
+                          alt=""
+                        />
+                      </button>
                     </div>
                   </li>
                 </ul>
