@@ -26,15 +26,16 @@ const WidgetContainer = () => {
             </div>
             <div className="middle flex flex-col items-center justify-center">
               <nav>
-                <ul className="flex gap-3 justify-between">
-                  <li>About</li>
-                  <li>Experience</li>
-                  <li>Recommended</li>
+                <ul className="flex gap-1 justify-between bg-zinc-950 p-2 rounded-xl">
+                  <li className="py-2 px-14 bg-zinc-800 text-white rounded-xl drop-shadow-2xl z-10">About</li>
+                  <li className="py-2 px-8">Experience</li>
+                  <li className="py-2 px-8">Recommended</li>
                 </ul>
               </nav>
-              <p className="text-left p-3">
+              <p className="text-left text-base p-3">
                 Hello! I’m Dave, your sales rep here from Salesforce. I’ve been
                 working at this awesome company for 3 years now.
+                <br />
                 <br />I was born and raised in Albany, NY, and have been living
                 in Santa Carla for the past 10 years with my wife Tiffany and my
                 4-year-old twin daughters, Emma and Ella.Both of them are just
@@ -58,28 +59,29 @@ const WidgetContainer = () => {
             </div>
             <div className="middle flex flex-col items-center justify-between">
               <nav>
-                <ul className="flex gap-3">
+                <ul className="flex gap-3 m-2">
                   <li>
                     <img src={gallery} alt="" />
                   </li>
                   <li>
-                    <button className=" w-36 h-14 text-white font-medium drop-shadow-xl border-t-2 backdrop-blur-md rounded-full bg-[#40464d]">
-                     <span><PlusOutlined  /></span> ADD IMAGE
-                    </button>
+                    
+                    <button className="w-36 h-14 text-white font-medium rounded-full bg-[#40464d] shadow-inner shadow-white border-b-0  drop-shadow-2xl ">
+  <span><PlusOutlined /></span> ADD IMAGE
+</button>
                   </li>
-                  <li>
-                    <div className="prev-next-btns">
+                  <li className="mb-10 mt-0 pt-0 -translate-y-7">
+                    <div className="prev-next-btns flex justify-center ">
                       <button>
                         <img
                           src={prev}
-                          className="hover:brightness-75 transition-all  "
+                          className="hover:brightness-75 w-30 h-30 transition-all rounded-full "
                           alt=""
                         />
                       </button>
                       <button>
                         <img
                           src={next}
-                          className="hover:brightness-75 transition-all  "
+                          className="hover:brightness-75 w-30 h-30 transition-all  rounded-full pb-3"
                           alt=""
                         />
                       </button>
