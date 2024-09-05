@@ -1,15 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
 import help from "../assets/help.png";
 import holder from "../assets/holder.png";
 import prev from "../assets/prev.png";
 import next from "../assets/next.png";
 import gallery from "../assets/gallery.png";
 import { PlusOutlined } from "@ant-design/icons";
-
+import one from "../assets/one.png";
+import two from "../assets/two.png";
+import three from "../assets/three.png";
 
 const WidgetContainer = () => {
+  const [images, setImages] = useState([
+    { src: one, alt: "imageHere" },
+    { src: two, alt: "imageHere" },
+    { src: three, alt: "imageHere" },
+  ]);
+
+  const addImage = () => {
+    const fileInput = document.createElement("input");
+    fileInput.type = "file";
+    fileInput.accept = "image/*";
+    fileInput.onchange = (e) => {
+      const file = e.target.files[0];
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        const newImage = {
+          src: event.target.result,
+          alt: "imageHere",
+        };
+        setImages([...images, newImage]);
+      };
+      reader.readAsDataURL(file);
+    };
+    fileInput.click();
+  };
+
   return (
-    <>
+
+    <div>
       <div className="main w-full p-10 px-20 gap-10 m-auto items-center justify-center grid lg:grid-cols-2">
         <div className="left flex items-center justify-center bg-[#363c43] rounded-xl h-full p-10">
           Left Will be empty
@@ -114,7 +142,26 @@ const WidgetContainer = () => {
           <hr className="h-1 bg-[#363c43] w-[90%] rounded-full border-none" />
         </div>
       </div>
-    </>
+
+
+      <button
+        className="w-36 h-14 text-white font-medium rounded-full bg-gray-400 shadow-inner shadow-lg"
+        onClick={addImage}
+      >
+        <PlusOutlined /> ADD IMAGE
+      </button>
+      <div className="imageGallery flex items-center justify-center overflow-x-scroll">
+        {images.map((image, index) => (
+          <div key={index} className="imageGalleryCarouselItem rounded-xl ">
+            <img src={image.src} alt={image.alt} width={240} height={240} className=" p-4" />
+          </div>
+        ))}
+      </div>
+      <div className="right h-full py-10 float-end">
+        <hr className="w-1 h-8 bg-slate-600 rounded-full border-none" />
+      </div>
+      <hr className="h-1 bg-[#363c43] w-[90%] rounded-full border-none" />
+    </div>
   );
 };
 
