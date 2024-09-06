@@ -36,16 +36,16 @@ const WidgetContainer = () => {
   };
 
   return (
-    <div>
+    <div className="flex flex-col items-center justify-center">
       <div className="main w-full p-10 px-20 gap-10 m-auto items-center justify-center grid lg:grid-cols-2">
         <div className="left flex items-center justify-center bg-[#363c43] rounded-xl h-full p-10">
           Left Will be empty
         </div>
-        <div className="right flex flex-col gap-3  items-center justify-center  h-full ">
+        <div className="right flex flex-col gap-3 items-center justify-center h-full">
           <div className="firstwidget w-full text-center bg-[#363c43] flex rounded-xl p-2 justify-between">
             <div className="left flex flex-col h-full items-center justify-center">
               <div className="help cursor-pointer">
-                <img src={help} className=" w-24 " alt="" />
+                <img src={help} className="w-24" alt="" />
               </div>
               <div className="drag pt-5 cursor-grabbing">
                 <img src={holder} alt="" />
@@ -73,14 +73,14 @@ const WidgetContainer = () => {
               </p>
             </div>
             <div className="right h-full py-10 float-end flex items-center">
-                <hr className="w-1 h-8 bg-slate-600 rounded-full border-none" />
-              </div>
+              <hr className="w-1 h-8 bg-slate-600 rounded-full border-none" />
+            </div>
           </div>
           <hr className="h-1 bg-[#363c43] w-[90%] rounded-full border-none" />
           <div className="secondwidget w-full text-center bg-[#363c43] flex rounded-xl p-2 justify-between">
-            <div className="left flex flex-col h-full items-center justify-center ">
+            <div className="left flex flex-col h-full items-center justify-center">
               <div className="help cursor-pointer">
-                <img src={help} className="w-7 " alt="" />
+                <img src={help} className="w-7" alt="" />
               </div>
               <div className="drag pt-5 cursor-grabbing">
                 <img src={holder} alt="" />
@@ -101,18 +101,18 @@ const WidgetContainer = () => {
                     </button>
                   </li>
                   <li className="mb-2 mt-0 pt-0 -translate-y-7">
-                    <div className="prev-next-btns flex justify-center ">
+                    <div className="prev-next-btns flex justify-center">
                       <button>
                         <img
                           src={prev}
-                          className="hover:brightness-75 w-30 h-30 transition-all rounded-full "
+                          className="hover:brightness-75 w-30 h-30 transition-all rounded-full"
                           alt=""
                         />
                       </button>
                       <button>
                         <img
                           src={next}
-                          className="hover:brightness-75 w-30 h-30 transition-all  rounded-full pb-3"
+                          className="hover:brightness-75 w-30 h-30 transition-all rounded-full pb-3"
                           alt=""
                         />
                       </button>
@@ -120,26 +120,21 @@ const WidgetContainer = () => {
                   </li>
                 </ul>
               </nav>
-              <div className="imageGallery flex items-center justify-center overflow-auto ">
+              <div className="imageGallery flex items-center justify-center overflow-auto">
                 {images.map((image, index) => (
-                  <div
-                    key={index}
-                    className="imageGalleryCarouselItem mx-2"
-                  >
+                  <div key={index} className="imageGalleryCarouselItem mx-2">
                     <img
                       src={image.src}
                       alt={image.alt}
-                      
                       className="rounded-xl w-40 h-40"
                     />
                   </div>
                 ))}
               </div>
-              
             </div>
-              <div className="right h-full py-10 float-end flex items-center">
-                <hr className="w-1 h-8 bg-slate-600 rounded-full border-none" />
-              </div>
+            <div className="right h-full py-10 float-end flex items-center">
+              <hr className="w-1 h-8 bg-slate-600 rounded-full border-none" />
+            </div>
           </div>
         </div>
       </div>
