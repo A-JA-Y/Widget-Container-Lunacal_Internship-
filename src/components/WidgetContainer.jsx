@@ -54,11 +54,11 @@ const WidgetContainer = () => {
             <div className="middle flex flex-col items-center justify-center">
               <nav>
                 <ul className="flex gap-1 justify-between bg-zinc-950 p-2 rounded-xl">
-                  <li className="py-2 px-14 bg-zinc-800 text-white rounded-xl drop-shadow-2xl z-10">
+                  <li className="py-2 px-14 bg-zinc-800 text-white rounded-xl drop-shadow-2xl z-10 cursor-pointer">
                     About
                   </li>
-                  <li className="py-2 px-8">Experience</li>
-                  <li className="py-2 px-8">Recommended</li>
+                  <li className="py-2 px-8 cursor-pointer">Experience</li>
+                  <li className="py-2 px-8 cursor-pointer">Recommended</li>
                 </ul>
               </nav>
               <p className="text-left text-base p-3">
@@ -94,7 +94,7 @@ const WidgetContainer = () => {
                   </li>
                   <li>
                     <button
-                      className="w-36 h-14 text-white shadow-inner shadow-black drop-shadow-lg font-medium rounded-full bg-gray-700"
+                      className="w-36 h-14 text-white shadow-inner shadow-[#ffffff38] drop-shadow-lg font-medium rounded-full bg-gray-700"
                       onClick={addImage}
                     >
                       <PlusOutlined /> ADD IMAGE
